@@ -1,29 +1,24 @@
-// components/common/Button.tsx
-import React from "react";
+import { ButtonProps } from "@/interface/index";
 
-interface ButtonProps {
-  buttonLabel: string;
-  buttonBackgroundColor?: "red" | "blue" | "gray"; // define accepted color values
-  onClick?: () => void;
-}
-
-const Button: React.FC<ButtonProps> = ({
+const Button = ({
   buttonLabel,
-  buttonBackgroundColor = "gray",
-  onClick,
-}) => {
-  const bgColor =
-    buttonBackgroundColor === "red"
-      ? "bg-red-500 hover:bg-red-600"
-      : buttonBackgroundColor === "blue"
-      ? "bg-blue-500 hover:bg-blue-600"
-      : "bg-gray-500 hover:bg-gray-600";
+  buttonSize,
+  buttonBackgroundColor,
+  action,
+}: ButtonProps) => {
+  const backgroundColorClass = buttonBackgroundColor
+    ? {
+        red: "bg-red-500",
+        blue: "bg-blue-500",
+        orange: "bg-orange-500",
+        green: "bg-green-500",
+      }[buttonBackgroundColor]
+    : "bg-slate-500";
 
   return (
     <button
-      onClick={onClick}
-      className={`text-white px-4 py-2 rounded ${bgColor}`}
-    >
+      onClick={action}
+      className={`${backgroundColorClass} ${buttonSize} px-6 py-2 text-sm font-semibold rounded-lg hover:${backgroundColorClass}/50 transition duration-300 text-white`}>
       {buttonLabel}
     </button>
   );

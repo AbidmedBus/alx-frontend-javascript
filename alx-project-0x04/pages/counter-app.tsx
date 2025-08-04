@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const CounterApp: React.FC = () => {
   const [count, setCount] = useState(0);
@@ -18,26 +18,27 @@ const CounterApp: React.FC = () => {
 
       {/* Funny message */}
       <p className="text-lg font-medium mb-4">
-        Current count: {count} {count === 0 ? "🙈 No clicks yet!" : count % 10 === 0 && count !== 0 ? "🔥 You're on fire!" : ""}
+        Current count: {count}{" "}
+        {count === 0
+          ? "🙈 No clicks yet!"
+          : count % 10 === 0 && count !== 0
+          ? "🔥 You're on fire!"
+          : ""}
       </p>
 
       {/* Counter Display */}
-      <div className="text-6xl font-bold mb-8">
-        {count}
-      </div>
+      <div className="text-6xl font-bold mb-8">{count}</div>
 
       {/* Buttons */}
       <div className="flex space-x-4">
         <button
           onClick={increment}
-          className="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-full text-lg transition duration-300 shadow-lg transform hover:scale-105"
-        >
+          className="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-full text-lg transition duration-300 shadow-lg transform hover:scale-105">
           Increment 🚀
         </button>
         <button
           onClick={decrement}
-          className="bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-8 rounded-full text-lg transition duration-300 shadow-lg transform hover:scale-105"
-        >
+          className="bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-8 rounded-full text-lg transition duration-300 shadow-lg transform hover:scale-105">
           Decrement 👎
         </button>
       </div>
@@ -48,6 +49,6 @@ const CounterApp: React.FC = () => {
       </p>
     </div>
   );
-}
+};
 
 export default CounterApp;

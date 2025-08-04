@@ -1,4 +1,4 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit";
+import { configureStore, createSlice  } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
 
 const counterSlice = createSlice({
@@ -7,26 +7,28 @@ const counterSlice = createSlice({
     value: 0
   },
   reducers: {
-    increment: (state) => {
-      state.value += 1;
+    increment: (state) =>{
+      state.value += 1
     },
     decrement: (state) => {
-      if (state.value > 0) state.value -= 1;
+      state.value > 0 ? state.value -= 1 : 0
     }
   }
 });
+
 
 const store = configureStore({
   reducer: {
     counter: counterSlice.reducer
   }
-});
+})
 
-export const { increment, decrement } = counterSlice.actions;
 
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
+export const { increment, decrement } = counterSlice.actions
 
-export const useAppDispatch = () => useDispatch<AppDispatch>();
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
 
-export default store;
+export const useAppDispatch = () => useDispatch<AppDispatch>()
+
+export default store
