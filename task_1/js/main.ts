@@ -1,5 +1,6 @@
 
-interface Director extends Teacher
+interface Director extends Teacher;
+    
 interface Teacher {
     readonly firstName: string;
     readonly lastName: string;
@@ -10,7 +11,7 @@ interface Teacher {
 }
 
 interface Directors extends Teacher {
-    numberOfReports: number;
+    numberOfReports: number
 }
 
 function printTeacher(firstName: string, lastName: string) {
