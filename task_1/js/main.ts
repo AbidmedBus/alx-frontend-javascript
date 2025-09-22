@@ -10,7 +10,7 @@ interface Teacher {
 }
 
 interface Directors extends Teacher {
-    numberpfReports: number;
+    numberOfReports: number;
 }
 
 function printTeacher(firstName: string, lastName: string) {
