@@ -7,8 +7,8 @@ interface Teacher {
     [property: string]: any;
 }
 
-interface Directors extends Teacher {
-    numberpfReports: number;
+interface Director extends Teacher {
+    numberOfReports: number;
 }
 
 function printTeacher(firstName: string, lastName: string) {
@@ -41,15 +41,6 @@ class StudentClass implements StudentClass {
     }
 }
 
-const student: StudentClass = {
-    firstName: 'Bob',
-    lastName: 'Pants',
-const director1: Directors = {
-  firstName: 'John',
-  lastName: 'Doe',
-  location: 'London',
-  fullTimeEmployee: true,
-  numberOfReports: 17,
-};
-console.log(director1);
+
+
 console.log(printTeacher('john', 'ward'));
