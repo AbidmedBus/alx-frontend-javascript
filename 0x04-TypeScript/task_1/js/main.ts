@@ -41,9 +41,15 @@ class StudentClass implements StudentClass {
     }
 }
 
-/*const student: StudentClass = {
+const student: StudentClass = {
     firstName: 'Bob',
     lastName: 'Pants',
-}*/
-
+const director1: Directors = {
+  firstName: 'John',
+  lastName: 'Doe',
+  location: 'London',
+  fullTimeEmployee: true,
+  numberOfReports: 17,
+};
+console.log(director1);
 console.log(printTeacher('john', 'ward'));
