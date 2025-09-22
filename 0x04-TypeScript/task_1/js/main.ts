@@ -26,7 +26,7 @@ interface printTeacherFunction {
     new (firstName: string, lastName: string): StudentClass;
 }
 
-class StudentClass implements StudentClass {
+class StudentClass { {
     constructor(firstName: string, lastName: string) {
         this.firstName = firstName;
         this.lastName = lastName;
